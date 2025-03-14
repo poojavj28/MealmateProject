@@ -26,7 +26,6 @@ Mealmate is a Django-based web application that allows users to register as rest
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/your-username/mealmate.git
-cd mealmate
 ```
 
 ### 2️⃣ Set Up a Virtual Environment
