@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Delivery</title>
+    <style>
+      nav {
+        background-color: #333;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 15px;
+        background-color: #555;
+        border-radius: 5px;
+      }
+      .nav-links a:hover {
+        background-color: #777;
+      }
+      body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff8e1; /* Light creamy background */
+            color: #5d4037; /* Dark brown text */
+            text-align: center;
+            margin: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #ff9800; /* Orange border */
+        }
+
+        h2 {
+            color: #d84315; /* Deep orange */
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: left;
+            color: #6d4c41; /* Warm brown */
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 98%;
+            padding: 8px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            border: 1.5px solid #ffcc80;
+            border-radius: 5px;
+            font-size: 13px;
+            background: #fff3e0; /* Light orange background */
+            color: #5d4037;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #ff6f00; /* Dark orange focus */
+            box-shadow: 0 0 5px rgba(255, 111, 0, 0.5);
+        }
+
+        button {
+            background: linear-gradient(90deg, #ff9800, #e65100);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #e65100, #bf360c);
+            transform: scale(1.05);
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2 style="color: white">Food Delivery</h2>
+      <div class="nav-links">
+        <a href="{% url 'delivery:display_res' %}">View Restaurants</a>
+        <a href="{% url 'delivery:add_res' %}">Add Restaurant</a>
+        <a href="{% url 'delivery:sign_in' %}">Sign In</a>
+        <a href="{% url 'delivery:sign_up' %}">Sign Up</a>
+      </div>
+    </nav>
+
+    <div style="margin-top: 50px"></div>
+<form method="POST">
+  {% csrf_token %}
+
+  <label>Restaurant Name:</label>
+  {{ form.Res_name }}
+
+  <label>Food Category:</label>
+  {{ form.Food_cat }}
+
+  <label>Rating:</label>
+  {{ form.rating }}
+
+  <label>Image:</label>
+  {{ form.img }}
+
+  <label>Address:</label>
+  {{ form.address }}
+
+  <button type="submit">Submit</button>
+</form>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Delivery</title>
+    <style>
+      nav {
+        background-color: #333;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 15px;
+        background-color: #555;
+        border-radius: 5px;
+      }
+      .nav-links a:hover {
+        background-color: #777;
+      }
+      body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2 style="color: white">Food Delivery</h2>
+      <div class="nav-links">
+        <a href="{% url 'delivery:display_res' %}">View Restaurants</a>
+        <a href="{% url 'delivery:add_res' %}">Add Restaurant</a>
+        <a href="{% url 'delivery:sign_in' %}">Sign In</a>
+        <a href="{% url 'delivery:sign_up' %}">Sign Up</a>
+      </div>
+    </nav>
+
+    <h1>Login success</h1>
+
+    <a href="{% url 'delivery:add_res' %}">Add Restaurants </a>
+    <a href="{% url 'delivery:display_res' %}">Show all Restaurants </a>
+  </body>
+</html>
+

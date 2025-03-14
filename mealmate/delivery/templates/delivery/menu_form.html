@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Delivery</title>
+    <style>
+      nav {
+        background-color: #333;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 15px;
+        background-color: #555;
+        border-radius: 5px;
+      }
+      .nav-links a:hover {
+        background-color: #777;
+      }
+      body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff8e1; /* Light creamy background */
+            color: #5d4037; /* Dark brown text */
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Form Styling */
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            max-width: 600px; /* Increased width from 400px to 600px */
+            width: 90%; /* Ensures responsiveness */
+            margin: 20px auto;
+            border: 3px solid #ff9800; /* Orange border */
+          }
+
+        /* Ensure checkboxes appear below the label */
+        label {
+            font-weight: bold;
+            color: #6d4c41; /* Warm brown */
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        /* Adjust all inputs to have consistent size and position */
+        input, select, textarea {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 2px solid #ffcc80;
+            border-radius: 5px;
+            font-size: 14px;
+            background: #fff3e0;
+            color: #5d4037;
+            outline: none;
+            display: block; /* Ensures each input appears on a new line */
+        }
+
+        /* Specifically target checkboxes */
+        input[type="checkbox"] {
+            width: auto; /* Allows natural checkbox size */
+            display: block; /* Forces checkboxes to be on a new line */
+            margin-top: 5px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #ff6f00; /* Dark orange focus */
+            box-shadow: 0 0 5px rgba(255, 111, 0, 0.5);
+        }
+
+        /* Submit Button */
+        button {
+            background: linear-gradient(90deg, #ff9800, #e65100);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #e65100, #bf360c);
+            transform: scale(1.05);
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2 style="color: white">Food Delivery</h2>
+      <div class="nav-links">
+        <a href="{% url 'delivery:display_res' %}">View Restaurants</a>
+        <a href="{% url 'delivery:add_res' %}">Add Restaurant</a>
+        <a href="{% url 'delivery:sign_in' %}">Sign In</a>
+        <a href="{% url 'delivery:sign_up' %}">Sign Up</a>
+      </div>
+    </nav>
+
+    <div style="margin-top: 50px"></div>
+  <form method="POST">
+    {% csrf_token %} {{form}}
+    <button>Submit</button>
+    </form>
+  </body>
+</html>
+

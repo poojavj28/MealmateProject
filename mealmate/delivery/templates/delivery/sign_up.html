@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: white;
+            padding: 25px; /* Adjusted padding */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 380px; /* Slightly smaller width */
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px; /* Slightly smaller font */
+        }
+
+        input {
+            padding: 8px; /* Reduced padding */
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 13px; /* Slightly smaller font */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px; /* Slightly smaller button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="{% url 'delivery:handle_signup' %}">
+        {% csrf_token %}
+        
+        <label>Username: </label>
+        <input type="text" name="username" required />
+
+        <label>Password: </label>
+        <input type="password" name="password" required />
+
+        <label>Email: </label>
+        <input type="email" name="email" required />
+
+        <label>Mobile: </label>
+        <input type="mobile" name="mobile" required />
+
+        <label>Address: </label>
+        <input type="address" name="address" required />
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal-Mate</title>
+    <style>
+        /* Fullscreen background image */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("{% static 'delivery/images/meal-background.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Updated Heading Style */
+        h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #ffcc00; /* New golden-yellow color */
+        }
+
+        /* Button styling */
+        .btn {
+            display: block;
+            text-decoration: none;
+            background: linear-gradient(90deg, #ff9800, #ff5722);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 8px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 200px;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #e65100, #bf360c);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Welcome to Meal-Mate 🍽️</h3>  
+    <a href="{% url 'delivery:sign_up' %}" class="btn">Sign Up</a>
+    <a href="{% url 'delivery:sign_in' %}" class="btn">Sign In</a>
+
+</body>
+</html>
